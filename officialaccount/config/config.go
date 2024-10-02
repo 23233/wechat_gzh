@@ -10,5 +10,6 @@ type Config struct {
 	AppSecret      string `json:"app_secret"`       // appsecret
 	Token          string `json:"token"`            // token
 	EncodingAESKey string `json:"encoding_aes_key"` // EncodingAESKey
+	DynamicMessage bool   `json:"dynamic_message"`  // 异步响应消息
 	Cache          cache.Cache
 }

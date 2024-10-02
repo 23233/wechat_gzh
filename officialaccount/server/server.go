@@ -73,6 +73,13 @@ func (srv *Server) Serve() error {
 	if err != nil {
 		return err
 	}
+
+	// 动态回复消息的情况下 直接返回success
+	if srv.DynamicMessage {
+		srv.String("success")
+		return nil
+	}
+
 	// 非安全模式下，请求处理方法返回为 nil 则直接回复 success 给微信服务器
 	if response == nil && !srv.isSafeMode {
 		srv.String("success")
