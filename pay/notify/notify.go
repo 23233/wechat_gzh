@@ -1,7 +1,7 @@
 package notify
 
 import (
-	"github.com/silenceper/wechat/v2/pay/config"
+	"github.com/23233/wechat_gzh/v2/pay/config"
 )
 
 // Notify 回调

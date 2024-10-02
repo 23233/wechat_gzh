@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/silenceper/wechat/v2/cache"
+	"github.com/23233/wechat_gzh/v2/cache"
 )
 
 // Config .config for 微信公众号

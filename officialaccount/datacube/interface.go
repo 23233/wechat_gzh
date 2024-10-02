@@ -3,7 +3,7 @@ package datacube
 import (
 	"fmt"
 
-	"github.com/silenceper/wechat/v2/util"
+	"github.com/23233/wechat_gzh/v2/util"
 )
 
 const (

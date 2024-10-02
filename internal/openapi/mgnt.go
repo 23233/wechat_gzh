@@ -4,10 +4,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/silenceper/wechat/v2/domain/openapi"
-	mpContext "github.com/silenceper/wechat/v2/miniprogram/context"
-	ocContext "github.com/silenceper/wechat/v2/officialaccount/context"
-	"github.com/silenceper/wechat/v2/util"
+	"github.com/23233/wechat_gzh/v2/domain/openapi"
+	ocContext "github.com/23233/wechat_gzh/v2/officialaccount/context"
+	"github.com/23233/wechat_gzh/v2/util"
 )
 
 const (
@@ -92,9 +91,6 @@ func (o *OpenAPI) ClearQuotaByAppSecret() error {
 // 获取 AppID 和 AppSecret
 func (o *OpenAPI) getAppIDAndSecret() (string, string, error) {
 	switch o.ctx.(type) {
-	case *mpContext.Context:
-		c := o.ctx.(*mpContext.Context)
-		return c.AppID, c.AppSecret, nil
 	case *ocContext.Context:
 		c := o.ctx.(*ocContext.Context)
 		return c.AppID, c.AppSecret, nil
@@ -106,8 +102,6 @@ func (o *OpenAPI) getAppIDAndSecret() (string, string, error) {
 // 获取 AccessToken
 func (o *OpenAPI) getAccessToken() (string, error) {
 	switch o.ctx.(type) {
-	case *mpContext.Context:
-		return o.ctx.(*mpContext.Context).GetAccessToken()
 	case *ocContext.Context:
 		return o.ctx.(*ocContext.Context).GetAccessToken()
 	default:
